@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -55,6 +56,14 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             jumpCount = 0; 
         }
+        else if (collision.gameObject.CompareTag("Death"))
+        {
+            SceneManager.LoadScene("DefeatScene");
+        }
+        else if (collision.gameObject.CompareTag("Victory"))
+        {
+            SceneManager.LoadScene("VictoryScene");
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -63,6 +72,14 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
         }
+        else if (collision.gameObject.CompareTag("Death"))
+        {
+            SceneManager.LoadScene("DefeatScene");
+        }
+        else if (collision.gameObject.CompareTag("Victory"))
+        {
+            SceneManager.LoadScene("VictoryScene");
+        }
     }
 
     private void OnCollisionStay(Collision collision)
@@ -70,6 +87,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+        else if (collision.gameObject.CompareTag("Death"))
+        {
+            SceneManager.LoadScene("DefeatScene");
+        }
+        else if (collision.gameObject.CompareTag("Victory"))
+        {
+            SceneManager.LoadScene("VictoryScene");
         }
     }
 }

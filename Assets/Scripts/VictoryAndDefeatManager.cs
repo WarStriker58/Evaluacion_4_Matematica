@@ -7,7 +7,7 @@ public class VictoryAndDefeatManager : MonoBehaviour
 {
     public void PlayAgain()
     {
-        SceneManager.LoadScene("Level1Scene");
+        SceneManager.LoadScene("LevelScene");
     }
 
     public void GoToMenu()

@@ -7,6 +7,6 @@ public class MenuManager : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level1Scene");
+        SceneManager.LoadScene("LevelScene");
     }
 }
